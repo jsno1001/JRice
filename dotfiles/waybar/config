@@ -1,0 +1,19 @@
+{
+    "position": "top",
+    "height": 30,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/language", "battery", "custom/power"],
+    "clock": {
+        "format": "{:%H:%M}"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "custom/power": {
+        "on-click": "/home/jsno/.config/waybar/scripts/power-btn.sh",
+        "format": "  ⏻"
+    }
+}
+
