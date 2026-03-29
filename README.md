@@ -1,0 +1,2 @@
+# JRice
+My hyprland rice
