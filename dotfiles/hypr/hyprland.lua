@@ -10,6 +10,18 @@ hl.monitor({
     scale = 1,
 })
 
+hl.monitor({
+    output = "DP-3",
+    mode = "1024x768@60",
+    position = "auto-left",
+    scale = 1,
+    reserved = {0,540,0,0},
+})
+hl.workspace_rule({
+        workspace = "10",
+        monitor = "DP-3"
+})
+
 --os.execute("hyprctl keyword monitor DP-3,addreserved,0,540,0,0")
 
 ---------------------
@@ -64,6 +76,9 @@ hl.env("HYPRCURSOR_SIZE", "24")
 ---- LOOK AND FEEL ----
 -----------------------
 
+local col1 = "rgb(50769B)"
+local col2 = "rgb(3B4652)" 
+
 hl.config({
     misc = {
         disable_hyprland_logo = true,
@@ -82,8 +97,8 @@ hl.config({
 
         -- https://wiki.hypr.land/Configuring/Basics/Variables/ for info about colors
         col = {
-            active_border = "rgb(50769B)",
-            inactive_border = "rgb(3B4652)",
+            active_border = col1,
+            inactive_border = col2,
         },
 
         -- Set to true enable resizing windows by clicking and dragging on borders and gaps
@@ -110,10 +125,10 @@ hl.config({
 
         -- Change transparency of focused and unfocused windows
         active_opacity = 1.0,
-        inactive_opacity = 0.92,
+        inactive_opacity = 0.9995,
 
         shadow = {
-            enabled = false,
+            enabled = true,
             range = 3,
             render_power = 3,
             color = "rgba(1a1a1aee)",
