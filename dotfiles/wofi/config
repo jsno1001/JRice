@@ -1,0 +1,20 @@
+show=drun
+
+matching=fuzzy
+term=kitty
+close_on_focus_loss = true
+
+allow-markup=true
+
+lines=5
+
+allow_images=true
+image_size=28
+
+term=kitty
+
+hide_scroll=true
+gtk_dark=true
+no_actions=true
+
+style=~/.config/wofi/style.css

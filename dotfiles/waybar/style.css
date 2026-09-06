@@ -1,6 +1,15 @@
 
+#workspaces button {
+    background-color: transparent;
+    color: #ffffff;
+}
+#workspaces button.active {
+    background-color: #4c566a; /* или любой твой акцентный цвет */
+}
+
 window#waybar {
-    background: rgba(0,0,0,0.5);
+    background: transparent;
+    background-color: rgba(39,39,39,0.95);
     color: #FFFFFF;
 }
 
@@ -9,4 +18,39 @@ window#waybar {
     margin-right: 15px;
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+* {
+    font-size: 14px; /* уменьшите шрифт */
+    min-height: 0;
+}
+
+window#waybar {
+    min-height: 0;
+}
+
+#workspaces button,
+#clock,
+#battery,
+#language,
+#custom-power {
+    padding: 0 4px;
+    margin: 0;
+    min-height: 0;
+}
+
+#waybar {
+    padding: 0;
+}
+
+#taskbar button.active {
+    background: #4c566a;
+}
+
+#custom-power {
+    font-size:20px;
+    font-weight: bold;
+}
+#tray {
+    background: transparent;
 }

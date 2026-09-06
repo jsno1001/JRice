@@ -4,15 +4,10 @@ window_padding_width 2 5
 remember_window_size no
 initial_window_width 900
 initial_window_height 600
-# foreground       #dddddd
-# background       #000000
+
+foreground       #dddddd
+background       #000000
 
 enabled_layouts  splits,stack
 
 confirm_os_window_close 0
-
-
-# BEGIN_KITTY_THEME
-# Noctalia
-include current-theme.conf
-# END_KITTY_THEME

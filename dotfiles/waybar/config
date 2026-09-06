@@ -1,19 +1,51 @@
+[
+
 {
     "position": "top",
-    "height": 30,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
+    "height": 10,
+    "modules-left": ["hyprland/workspaces", "tray"],
+    "modules-center": ["backlight", "custom/clock", "pulseaudio"],
     "modules-right": ["hyprland/language", "battery", "custom/power"],
-    "clock": {
-        "format": "{:%H:%M}"
-    },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% {icon} ",
         "format-icons": ["", "", "", "", ""]
     },
     "custom/power": {
-        "on-click": "/home/jsno/.config/waybar/scripts/power-btn.sh",
-        "format": "  ⏻"
+        "on-click": "pkill wofi || ~/.config/waybar/scripts/power-btn.sh",
+        "format": "⏻ "
+    },
+    "backlight": {
+        "device": "amdgpu_bl1", // узнать имя: ls /sys/class/backlight/
+        "format": "{percent}%{icon}  ",
+        "format-icons": ["🌥", "🌤", "🌣"],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-"
+    },
+
+    "pulseaudio": {
+        "format": "  {icon} {volume}% ",
+        "format-muted": "  🔈M% ",
+        "format-icons": {
+            "default": ["🕨", "🕩", "🕪"]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+        "scroll-step": 5
+    },
+    "custom/clock": {
+        "exec": "LC_TIME=ru_RU.utf8 date '+%H:%M %d %b %a'",
+        "interval": 30
+    },
+    "custom/touchpad": {
+        "exec": "cat /tmp/touchpad_state",
+        "interval": 1,
+        "format": "{} ⌨️ "
+    },
+    "tray": {
+        "icon-size":17
     }
 }
+
+]
 

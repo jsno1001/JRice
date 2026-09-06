@@ -1,0 +1,28 @@
+#!/bin/bash
+
+case $1 in
+    up)
+        brightnessctl set 5%+
+        ;;
+    down)
+        brightnessctl set 5%-
+        ;;
+esac
+
+brightness=$(brightnessctl get)
+max=$(brightnessctl max)
+percent=$((brightness * 100 / max))
+
+if [ "$percent" -ge "70" ]; then
+    icon="notification-display-brightness-high"
+elif [ "$percent" -ge "30" ]; then
+    icon="notification-display-brightness-medium"
+else
+    icon="notification-display-brightness-low"
+fi
+
+#dunstify -a "changebrightness" -u low -i "$icon" \
+#    -h int:value:"$percent" \
+#    -h string:x-dunst-stack-tag:brightness \
+#    "Brightness: ${percent}%" \
+#    -t 1500
